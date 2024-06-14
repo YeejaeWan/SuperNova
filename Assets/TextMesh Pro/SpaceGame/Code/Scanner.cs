@@ -8,6 +8,7 @@ public class Scanner : MonoBehaviour
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     public List<Transform> nearestTargets; //가장 가까운 타겟들
+    internal object nearestTarget;
 
     void FixedUpdate()
     {

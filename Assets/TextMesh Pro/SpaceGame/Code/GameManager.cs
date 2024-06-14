@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Select);
     }
 
+
     public void GameRetry()
     {
         SceneManager.LoadScene(0);

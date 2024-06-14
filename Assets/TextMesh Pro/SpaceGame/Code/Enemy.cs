@@ -11,15 +11,13 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D target;
 
     bool isLive;
-    public bool bossKill; // 적이 보스 적인 경우를 나타내는 변수
-  
+    public bool bossKill;
 
     Rigidbody2D rigid;
     Collider2D coll;
     Animator anim;
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
-  
 
     void Awake()
     {
@@ -28,7 +26,6 @@ public class Enemy : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         wait = new WaitForFixedUpdate();
-
     }
 
     void FixedUpdate()
@@ -61,7 +58,6 @@ public class Enemy : MonoBehaviour
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
 
-        // Enemy 재활용 부분
         coll.enabled = true;
         rigid.simulated = true;
         spriter.sortingOrder = 2;
@@ -77,24 +73,15 @@ public class Enemy : MonoBehaviour
         maxHealth = data.health;
         health = data.health;
 
-        if (data.spriteType == animCon.Length - 1)
+        // 크기 설정
+        if (data.spriteType >= animCon.Length - 2)
         {
             spriter.transform.localScale = new Vector3(5f, 5f, 5f);
             bossKill = true;
         }
-        else if(data.spriteType == animCon.Length - 2)
-        {
-            spriter.transform.localScale = new Vector3(5f, 5f, 5f);
-            bossKill = false;
-        }
-        else if (data.spriteType == animCon.Length - 3)
+        else if (data.spriteType >= animCon.Length - 4)
         {
             spriter.transform.localScale = new Vector3(3f, 3f, 3f);
-            bossKill = false;
-        }
-        else if (data.spriteType == animCon.Length - 4)
-        {
-            spriter.transform.localScale = new Vector3(2f, 2f, 2f);
             bossKill = false;
         }
         else
@@ -111,7 +98,6 @@ public class Enemy : MonoBehaviour
 
         health -= collision.GetComponent<Bullet>().damage;
 
-      
         StartCoroutine(KnockBack());
 
         if (health > 0)
@@ -123,12 +109,10 @@ public class Enemy : MonoBehaviour
         {
             // Die
             isLive = false;
-            // 비활성화 부분
             coll.enabled = false;
             rigid.simulated = false;
             spriter.sortingOrder = 1;
 
-            // 시체 애니메이션
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
             GameManager.instance.GetExp();
@@ -142,22 +126,26 @@ public class Enemy : MonoBehaviour
             {
                 GameManager.instance.GameVictory();
             }
+            else
+            {
+                StartCoroutine(DestroyAfterDelay());
+            }
         }
     }
 
     IEnumerator KnockBack()
-    {    
-        
-       
+    {
         yield return wait; // 하나의 물리 프레임 딜레이
 
-        
-         Vector3 playerPos = GameManager.instance.player.transform.position;
-         Vector3 dirVec = transform.position - playerPos;
+        Vector3 playerPos = GameManager.instance.player.transform.position;
+        Vector3 dirVec = transform.position - playerPos;
         rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
-        
+    }
 
-
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(1f); // 2초 후 비활성화
+        gameObject.SetActive(false);
     }
 
     void Dead()
