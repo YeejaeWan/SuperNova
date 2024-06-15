@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     {
         spawnPoints = GetComponentsInChildren<Transform>();
         currentSpawnData = new List<SpawnData>();
-        SetStageSpawnData(1); // 초기 스테이지는 1로 설정
+        SetStageSpawnData(0); // 초기 스테이지는 1로 설정
     }
 
     void Update()
@@ -49,7 +49,6 @@ public class Spawner : MonoBehaviour
 
         if (enemy == null)
         {
-            Debug.LogError("Failed to spawn enemy: " + enemyPrefab.name);
             return;
         }
 

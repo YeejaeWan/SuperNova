@@ -154,7 +154,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(2f); // 2초 후 비활성화
+        yield return new WaitForSeconds(0.3f); // 2초 후 비활성화
         gameObject.SetActive(false);
     }
 
