@@ -11,13 +11,18 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D target;
 
     bool isLive;
-    public bool bossKill;
+    public bool bossKill; // 적이 보스 적인 경우를 나타내는 변수
 
     Rigidbody2D rigid;
     Collider2D coll;
     Animator anim;
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
+
+    // 기절 관련 변수
+    public float stunDuration = 3f;
+    private bool isStunned = false;
+    private float stunTimer = 0f;
 
     void Awake()
     {
@@ -34,6 +39,10 @@ public class Enemy : MonoBehaviour
             return;
 
         if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+            return;
+
+        // 기절 상태일 때 이동 멈춤
+        if (isStunned)
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -58,6 +67,7 @@ public class Enemy : MonoBehaviour
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
 
+        // Enemy 재활용 부분
         coll.enabled = true;
         rigid.simulated = true;
         spriter.sortingOrder = 2;
@@ -73,7 +83,6 @@ public class Enemy : MonoBehaviour
         maxHealth = data.health;
         health = data.health;
 
-        // 크기 설정
         if (data.spriteType >= animCon.Length - 2)
         {
             spriter.transform.localScale = new Vector3(5f, 5f, 5f);
@@ -98,7 +107,8 @@ public class Enemy : MonoBehaviour
 
         health -= collision.GetComponent<Bullet>().damage;
 
-        StartCoroutine(KnockBack());
+        if (!isStunned)
+            StartCoroutine(KnockBack());
 
         if (health > 0)
         {
@@ -144,8 +154,29 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(1f); // 2초 후 비활성화
+        yield return new WaitForSeconds(2f); // 2초 후 비활성화
         gameObject.SetActive(false);
+    }
+
+    public void Stun()
+    {
+        isStunned = true;
+        stunTimer = 0f;
+        rigid.velocity = Vector2.zero; // 기절 시 이동 멈춤
+        spriter.color = Color.gray; // 기절 시 색상 변경
+    }
+
+    void Update()
+    {
+        if (isStunned)
+        {
+            stunTimer += Time.deltaTime;
+            if (stunTimer >= stunDuration)
+            {
+                isStunned = false;
+                spriter.color = Color.white; // 기절 해제 시 색상 복원
+            }
+        }
     }
 
     void Dead()

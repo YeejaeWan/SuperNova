@@ -217,15 +217,5 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1; // 게임 재개
     }
 
-    void SetBackButtonSize()
-    {
-        if (backButton != null)
-        {
-            LayoutElement layoutElement = backButton.GetComponent<LayoutElement>();
-            if (layoutElement == null)
-            {
-                layoutElement = backButton.AddComponent<LayoutElement>();
-            }
-        }
-    }
+
 }

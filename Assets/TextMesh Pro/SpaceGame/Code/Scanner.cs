@@ -20,7 +20,6 @@ public class Scanner : MonoBehaviour
     List<Transform> GetNearestTargets()
     {
         List<Transform> result = new List<Transform>();
-        float diff = 100;
 
         foreach (RaycastHit2D target in targets)
         {
