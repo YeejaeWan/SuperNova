@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AcSpaceEnemy6 3
+  m_Name: monster4_stage2
   m_Controller: {fileID: 9100000, guid: f2855d618fc8d9c499189d3f39b9cbbc, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: bb6aa34a692c0f649b221cee2e9aac1b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 84568143305fbe842b4cb857232299df, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e23e1fc5058d27544902bac81cde62cf, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 28478ba90b1f6894ca487846b8539fd9, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 8adfae073cc3d5a40a93f5e620408f15, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7cff7f2dad15ad94b9d14d08294fa453, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 41eb84b5ea0c13b4384ead9f37ce4b8d, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: bff1d6f4d60ec3d47b4256e66a28936b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7184151940991214682940d12e9a47b7, type: 2}

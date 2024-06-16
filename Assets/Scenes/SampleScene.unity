@@ -943,7 +943,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -16936,54 +16936,48 @@ MonoBehaviour:
     health: 2000
     speed: 3.5
   stage2SpawnData:
-  - spawnTime: 0.2
+  - spawnTime: 0.5
     enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
       type: 3}
     spriteType: 0
-    health: 50
-    speed: 1.5
-  - spawnTime: 0.2
+    health: 75
+    speed: 2.1
+  - spawnTime: 0.4
     enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
       type: 3}
     spriteType: 1
-    health: 100
+    health: 150
+    speed: 2.2
+  - spawnTime: 0.3
+    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
+      type: 3}
+    spriteType: 2
+    health: 200
     speed: 2.5
+  - spawnTime: 1
+    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
+      type: 3}
+    spriteType: 3
+    health: 300
+    speed: 3
+  - spawnTime: 3.5
+    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
+      type: 3}
+    spriteType: 4
+    health: 700
+    speed: 3.3
+  - spawnTime: 7
+    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
+      type: 3}
+    spriteType: 5
+    health: 1500
+    speed: 3.5
   - spawnTime: 0.2
     enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
       type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
-  - spawnTime: 0.2
-    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
-      type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
-  - spawnTime: 0.2
-    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
-      type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
-  - spawnTime: 0.2
-    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
-      type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
-  - spawnTime: 0.2
-    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
-      type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
-  - spawnTime: 0.2
-    enemyPrefab: {fileID: 5481442690177523189, guid: 31d573cd02d83c44788054bc8e266ca2,
-      type: 3}
-    spriteType: 1
-    health: 100
-    speed: 2.5
+    spriteType: 6
+    health: 2500
+    speed: 3.7
   levelTime: 0
 --- !u!1 &611463417
 GameObject:
@@ -19076,7 +19070,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 0100000001000000010000000100000001000000881300002d0000003c0000005000000064000000
+  nextExp: 0100000003000000050000000a0000003200000096000000d20000001801000068010000f4010000
   pool: {fileID: 26420130}
   player: {fileID: 1490399755}
   uiLevelUp: {fileID: 712484326}
@@ -25907,7 +25901,7 @@ Animator:
   m_GameObject: {fileID: 1490399750}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df807d1e0bc600a46baa091272af72d5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13766e6d45acca245be33a9af53a9bdf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -44988,7 +44982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: 
 --- !u!222 &1927168596
 CanvasRenderer:
   m_ObjectHideFlags: 0

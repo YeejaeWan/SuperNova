@@ -83,14 +83,24 @@ public class Enemy : MonoBehaviour
         maxHealth = data.health;
         health = data.health;
 
-        if (data.spriteType >= animCon.Length - 2)
+        if (data.spriteType == animCon.Length - 1)
         {
             spriter.transform.localScale = new Vector3(5f, 5f, 5f);
             bossKill = true;
         }
-        else if (data.spriteType >= animCon.Length - 4)
+        else if (data.spriteType == animCon.Length - 2)
+        {
+            spriter.transform.localScale = new Vector3(5f, 5f, 5f);
+            bossKill = false;
+        }
+        else if (data.spriteType == animCon.Length - 3)
         {
             spriter.transform.localScale = new Vector3(3f, 3f, 3f);
+            bossKill = false;
+        }
+        else if (data.spriteType == animCon.Length - 4)
+        {
+            spriter.transform.localScale = new Vector3(2f, 2f, 2f);
             bossKill = false;
         }
         else

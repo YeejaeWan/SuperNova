@@ -248,16 +248,16 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   animCon:
+  - {fileID: 22100000, guid: 10bb8a9f607186c4e9aa3c6642b883e6, type: 2}
   - {fileID: 22100000, guid: f01bfc35b63e83c4e8810f3c29618d29, type: 2}
-  - {fileID: 22100000, guid: 25f7a818644b68042bb0c0c2a28d1550, type: 2}
-  - {fileID: 22100000, guid: b76740c341480924d9ea290ffa58de8d, type: 2}
-  - {fileID: 22100000, guid: c4d8cbb582b4e0d45b5cbb986c422e37, type: 2}
-  - {fileID: 22100000, guid: ec79e0640ccbf7243bf4a441194b938c, type: 2}
-  - {fileID: 22100000, guid: c4d8cbb582b4e0d45b5cbb986c422e37, type: 2}
-  - {fileID: 22100000, guid: c4d8cbb582b4e0d45b5cbb986c422e37, type: 2}
-  - {fileID: 22100000, guid: c4d8cbb582b4e0d45b5cbb986c422e37, type: 2}
+  - {fileID: 22100000, guid: 68e0b30c230bbef4891e8b749e8f6be7, type: 2}
+  - {fileID: 22100000, guid: 44ff85d26a29d7743b1349fb925bc961, type: 2}
+  - {fileID: 22100000, guid: e64feb2a1f017e54da84a9832ef3990b, type: 2}
+  - {fileID: 22100000, guid: 4878872ba9b51de408b7d41d23f23f77, type: 2}
+  - {fileID: 22100000, guid: 238425e749634504e851f1d08092212f, type: 2}
   target: {fileID: 0}
   bossKill: 0
+  stunDuration: 3
 --- !u!114 &5481442690177523182
 MonoBehaviour:
   m_ObjectHideFlags: 0
