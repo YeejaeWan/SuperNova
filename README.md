@@ -2,7 +2,7 @@
 ![image](https://github.com/YeejaeWan/Space_Game/assets/104914172/df705021-5bb6-463a-a3d3-144ee77a7434)
 
 
-**컴퓨터 그래픽스 프로젝트 (2D 슈팅 게임)**
+**SpaceGame 업그레이드하기**
 
 
 ## 게임 소개
