@@ -77,8 +77,6 @@
 난이도와 타일맵이 다름.
 
 
-
-  
 |캐릭터 선택|
 |:---:|
 |<img src="https://github.com/YeejaeWan/Space_Game/assets/104914172/299e3de5-1907-4b75-a140-134a49e88740" width="300" height="400"/>|
@@ -138,6 +136,18 @@
 |:---:|
 |<img src="https://github.com/YeejaeWan/Space_Game/assets/104914172/fc3629d8-0a8e-4cc5-8503-21d069ac5354" width="300" height="400"/>|
 
+|설정(추가기능)|
+|:---:|
+|<img src="https://github.com/user-attachments/assets/0c258e8f-8dd1-408e-9e1c-d091f6230870" width="300" height="400"/>|
+
+- 설정 버튼을 누르면, 게임이 멈추고 계속하기와 게임 종료 버튼를 선택할 수 있음.
+
+  
+|스킬(추가기능)|
+|:---:|
+|<img src="https://github.com/user-attachments/assets/bcab3b02-f09e-46d1-bc04-25592d668082" width="300" height="400"/>|
+
+ - 랜덤한 방향으로 3개의 총알을 날려 타켓팅하여 3초간 기절 시킴
 
 ***
 ![image](https://github.com/YeejaeWan/Space_Game/assets/104914172/5919d4ae-b222-4d2e-bbe3-d7152cfd0c09)
